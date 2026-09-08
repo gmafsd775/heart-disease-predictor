@@ -1,3 +1,17 @@
+## 🌐 Live Demo
+
+**Try the live application here:**
+👉 [https://heart-disease-predictor-ccfg.onrender.com](https://heart-disease-predictor-ccfg.onrender.com)
+
+No installation required. Just open the link and start using it!
+
+---
+
+## 📂 GitHub Repository
+
+**Source Code:**
+👉 [https://github.com/gmafsd775/heart-disease-predictor](https://github.com/gmafsd775/heart-disease-predictor)
+
 # Heart Disease Prediction System
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
