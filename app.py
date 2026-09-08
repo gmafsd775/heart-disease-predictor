@@ -2,12 +2,12 @@
 import joblib
 import numpy as np
 import pandas as pd
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import os
 import warnings
 
-# Suppress all warnings (including scikit-learn version mismatch)
+# Suppress warnings
 warnings.filterwarnings("ignore")
 
 app = Flask(__name__)
@@ -18,7 +18,6 @@ model_path = 'model.joblib'
 
 if not os.path.exists(model_path):
     print(f"Error: {model_path} not found!")
-    print("Please make sure you have saved your trained model as 'model.joblib'")
     exit(1)
 
 try:
@@ -31,13 +30,8 @@ except Exception as e:
 
 @app.route('/', methods=['GET'])
 def home():
-    return jsonify({
-        'message': 'Heart Disease Prediction API is running!',
-        'endpoints': {
-            '/predict': 'POST - Send patient data to get prediction',
-            '/features': 'GET - Get list of required features'
-        }
-    })
+    # Serve the HTML page directly
+    return send_from_directory('.', 'index.html')
 
 @app.route('/features', methods=['GET'])
 def get_features():
